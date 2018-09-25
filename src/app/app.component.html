@@ -1,0 +1,36 @@
+<hr>
+
+<div class="container-fluid">
+  <h1 style="min-height: 40px; text-align: center;">{{flickerData?.title}}</h1>
+</div>
+
+<hr>
+
+<div class="row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false" style="overflow-y: scroll; height: 600px;">
+  <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12" *ngFor="let item of flickerData?.items">
+    <div class="card">
+      <img class="card-img" style="height: 250px;" src="{{item.media.m}}" alt="Card image">
+      <div class="card-img-overlay">
+        <h5 class="card-title" style="color: white; text-align: center;">{{item.title}}</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">uploaded by : {{item.author}} on {{item.published}}</p>
+        <p class="card-text" style="height: 100px; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">Description
+          : {{item.description}}</p>
+      </div>
+      <div class="card-footer text-muted" style="height: 45px; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">
+        Tags : {{item.tags}}
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <router-outlet></router-outlet> -->
